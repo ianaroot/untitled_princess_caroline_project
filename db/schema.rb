@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_12_234742) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_14_023552) do
   create_table "bots", force: :cascade do |t|
     t.integer "user_id"
     t.json "code"
@@ -33,6 +33,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_12_234742) do
     t.integer "winner"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "notation"
     t.index ["black_player_type", "black_player_id"], name: "index_games_on_black_player"
     t.index ["white_player_type", "white_player_id"], name: "index_games_on_white_player"
   end
