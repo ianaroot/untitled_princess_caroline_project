@@ -1,0 +1,5 @@
+
+<%= form_with url: bots_path, method: :post, multipart: true do |f| %>
+  <%= f.file_field 'bot_file' %>
+  <%= f.submit %>
+<% end %>
