@@ -18,9 +18,10 @@
   left: 620px;
   top: 300px;
   heigh: 12px;
-  width: 40px;
+  width: 60px;
   text-align: center;
 }
+
 #pause-button {
   border-radius: 2px;
   color: #000000;
@@ -29,12 +30,13 @@
   left: 620px;
   top: 350px;
   heigh: 12px;
-  width: 40px;
+  width: 60px;
   text-align: center;
 }
 
 #arena {
   margin-left: 80px;
+  height: 900px;
 }
 
 /* square */
@@ -75,7 +77,25 @@
 body {
     background-color: #420505;
     color: #fce38f;
+    
+  .captures {
+    background-color: #fce38f;
+    border-radius: 10px;
+    border: 2px solid #000000;
+    height: 49;
+    width: 490
+  }
 }
+/* 
+.no-border {
+  border: 0px;
+} */
+/* table, tr {
+  border: 0px;
+} */
+table, tr, td {
+  border: 1px solid black;
+
 
 #turn-marker {
   /* margin-top: : 20px; */
@@ -98,18 +118,3 @@ body {
   font-weight: bold;
 }
 
-#W-captures {
-  background-color: #fce38f;
-  border-radius: 10px;
-  border: 2px solid #000000;
-  height: 49;
-  width: 490
-}
-
-#B-captures {
-  background-color: #fce38f;
-  border-radius: 10px;
-  border: 2px solid #000000;
-  height: 49;
-  width: 490
-}
