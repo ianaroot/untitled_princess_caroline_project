@@ -1,4 +1,5 @@
 import Board from "./board"
+import Rules from "./rules"
 
 class View{
   constructor(_gameController){
@@ -42,6 +43,8 @@ class View{
 
     let element = document.getElementById( gridPosition );
     element.innerHTML = ""
+    element.classList.remove("B")
+    element.classList.remove("W")
   };
   displayPiece(args){
     // let elem = document.createElement("img"),
@@ -57,10 +60,8 @@ class View{
       pieceInitials = args["pieceInitials"],
       element = document.getElementById( gridPosition ),
       pieceImage = this.unicodePieces[pieceInitials];
-  
-    
     element.innerHTML = pieceImage;
-    element.style.color = "black"
+    element.classList.add(pieceInitials[0])
 
   };
 
@@ -97,21 +98,25 @@ class View{
     return firstInitial + secondInitial
   };
   highlightTile(){
+    console.log("clicky")
     if(!this._gameController.board.gameOver){
       let target = arguments[0].currentTarget,
-      img = target.children[0],
+      // img = target.children[0],
       position = Board.gridCalculatorReverse( target.id ),
       team = Board.EMPTY;
       this.unhighlLighTiles();
       this.setTileClickListener();
-      if (img) {
-        team = this.teamSet(img.src)
+      console.log(target.classList)
+      if (target.classList.contains("B") || target.classList.contains("W") ) {
+        // team = this.teamSet(img.src)
+        team = this.teamSet(target.classList)
         if (team === this._gameController.board.allowedToMove){
           let viables = Rules.viablePositionsFromKeysOnly( {startPosition: position, board: this._gameController.board } )
           for (let i = 0; i < viables.length; i++){
             let tilePosition = viables[i],
             alphaNumericPosition = Board.gridCalculator(tilePosition),
             square = document.getElementById(alphaNumericPosition);
+            console.log("this the square yo: " + square)
             square.classList.add("highlight2")
             square.removeEventListener("click", this.boundHighlightTile )
             square.addEventListener("click", this.boundAttemptMove )
@@ -125,12 +130,21 @@ class View{
   retrieveTiles(){
     return document.getElementsByClassName("chess-tile")
   }
-  teamSet(src){
-    let regex = /(\w)[A-Z]\.png$/,
-      teamInitial = src.match(regex)[1];
-    if( teamInitial === "B"){
+  // teamSet(src){
+  //     let regex = /(\w)[A-Z]\.png$/,
+  //     teamInitial = src.match(regex)[1];
+  //   if( teamInitial === "B"){
+  //     return Board.BLACK;
+  //   }else if (teamInitial === "W") {
+  //     return Board.WHITE;
+  //   }else {
+  //     throw new Error("error in teamSet")
+  //   }
+  // }
+  teamSet(list){
+    if( list.contains("B")){
       return Board.BLACK;
-    }else if (teamInitial === "W") {
+    }else if (list.contains("W")) {
       return Board.WHITE;
     }else {
       throw new Error("error in teamSet")
