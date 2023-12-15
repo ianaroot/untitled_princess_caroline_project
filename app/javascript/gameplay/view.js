@@ -5,6 +5,20 @@ class View{
     this.boundHighlightTile = this.highlightTile.bind(this)
     this.boundAttemptMove = this.attemptMove.bind(this)
     this._gameController = _gameController
+    this.unicodePieces = {
+      WK: '\&#9812',
+      BK: '\&#9818',
+      WQ: '\&#9813',
+      BQ: '\&#9819',
+      WR: '\&#9814',
+      BR: '\&#9820',
+      WB: '\&#9815',
+      BB: '\&#9821',
+      WN: '\&#9816',
+      BN: '\&#9822',
+      WP: '\&#9817',
+      BP: '\&#9823'
+    };
   }
 
   static get TILE_HEIGHT() { return "49" }
@@ -40,10 +54,16 @@ class View{
     // element.appendChild(elem)
     
     let  gridPosition = args["gridPosition"],
-      element = document.getElementById( gridPosition );
+      pieceInitials = args["pieceInitials"],
+      element = document.getElementById( gridPosition ),
+      pieceImage = this.unicodePieces[pieceInitials];
   
-    element.innerHTML = '\&#9820' 
+    
+    element.innerHTML = pieceImage;
+    element.style.color = "black"
+
   };
+
   displayLayOut(args){
 
     let board = args["board"],
@@ -67,7 +87,7 @@ class View{
     this.displayAlerts(alert)
   };
   pieceImgSrc(pieceInitials){
-    return "./chesspieces/" + pieceInitials + ".png"
+    // return "./chesspieces/" + pieceInitials + ".png"
    
     // return  "<%= asset_path('#{pieceInitials}.png') %>"
   };
