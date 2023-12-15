@@ -1,3 +1,5 @@
+import Rules from "./rules"
+
 class Api {
   constructor (args){
     this._board = args["board"]
@@ -144,3 +146,5 @@ class Api {
 
   // positionsCurrentlyAttackedBy(team) doesn't care whether pawn attack position is occupied
 }
+
+export default Api

@@ -1,3 +1,9 @@
+import Board from "./board"
+import View	from "./view"
+import Api	from "./api"
+import Bot	from "./bot"
+import Rules from "./rules"
+
 const throwIfMissing = p => { throw new Error(`Missing parameter: ${p}`) }
 
 class GameController {
@@ -92,9 +98,8 @@ class GameController {
 		}
 	}
 }
-gameController = new GameController()
 
-tests = {
+var tests = {
 	pawnPromotion: 	[1,18, 50,42, 11,27, 59,41, 3,19, 42,34, 14,22, 34,27, 18,24, 51, 43, 10, 26, 41, 17, 26, 34, 49, 33, 19, 33, 57, 42, 33, 49, 27, 19, 34, 43, 19, 12, 43, 52, 12,  5, 4,   5, 17,  9, 52, 61 ],
   sim2: 					[1,18, 50,42, 11,27, 59,41, 3,19, 42,34, 14,22, 34,27, 0,1,   27, 18, 9,  18, 51, 35, 15, 23, 58, 23 ],
   blackEnPassant: [1,18, 50,42, 11,27, 59,41, 3,19, 42,34, 14,22, 34,27, 18,24, 51, 43],// 10,26],
@@ -123,3 +128,5 @@ tests = {
 // 		}
 // 	}
 // }
+
+export default GameController

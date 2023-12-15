@@ -1,3 +1,4 @@
+import Board from "./board";
 class Layout{
   static default(){
     let layOut = [
@@ -40,3 +41,5 @@ class Layout{
     return layOut
   }
 }
+
+export default Layout

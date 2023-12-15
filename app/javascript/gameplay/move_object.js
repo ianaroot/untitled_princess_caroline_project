@@ -1,3 +1,5 @@
+import Board from "./board"
+
 class MoveObject {
   constructor({endPosition: endPosition,
     additionalActions: additionalActions, pieceNotation: pieceNotation,
@@ -21,3 +23,5 @@ class MoveObject {
   }
 
 }
+
+export default MoveObject

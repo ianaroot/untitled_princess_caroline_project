@@ -1,3 +1,7 @@
+import MovesCalculator from "./moves_calculator";
+import Board from "./board";
+import MoveObject from "./move_object";
+
 class Rules {
 
   static getMoveObject(startPosition, endPosition, board){
@@ -254,3 +258,5 @@ class Rules {
     return pawnPromotionNotation
   }
 }
+
+export default Rules

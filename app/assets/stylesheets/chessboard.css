@@ -95,6 +95,10 @@ body {
 } */
 table, tr, td {
   border: 1px solid black;
+  font-size: 45px;
+  text-align:center;
+  vertical-align:middle;
+}
 
 
 #turn-marker {

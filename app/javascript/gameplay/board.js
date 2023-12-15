@@ -1,3 +1,6 @@
+import Layout from "./layout";
+import Rules from "./rules";
+
 class Board {
   // TODO might be easier to store the moveObjects and recreate noatation on demand!!!
   constructor({layOut: layOut, capturedPieces: capturedPieces, gameOver: gameOver, allowedToMove: allowedToMove, movementNotation: movementNotation, previousLayouts: previousLayouts}){
@@ -615,3 +618,5 @@ class Board {
     return position
   }
 }
+
+export default Board

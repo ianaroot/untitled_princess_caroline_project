@@ -1,3 +1,5 @@
+import Board from "./board"
+
 class View{
   constructor(_gameController){
     this.boundHighlightTile = this.highlightTile.bind(this)
@@ -18,21 +20,29 @@ class View{
     document.getElementById( 'notifications' ).innerHTML = "";
   };
   undisplayPiece(gridPosition){
-    let element = document.getElementById( gridPosition ),
-      children  = element.children;
-    for( let i = 0; i < children.length; i ++){
-      children[i].remove()
-    };
+    // let element = document.getElementById( gridPosition ),
+    //   children  = element.children;
+    // for( let i = 0; i < children.length; i ++){
+    //   children[i].remove()
+    // };
+
+    let element = document.getElementById( gridPosition );
+    element.innerHTML = ""
   };
   displayPiece(args){
-    let elem = document.createElement("img"),
-      pieceInitials = args["pieceInitials"],
-      gridPosition = args["gridPosition"];
-    elem.setAttribute("src", this.pieceImgSrc( pieceInitials ) );
-    elem.setAttribute("height", View.TILE_HEIGHT);
-    elem.setAttribute("width", View.TILE_HEIGHT);
-    let element = document.getElementById( gridPosition );
-    element.appendChild(elem)
+    // let elem = document.createElement("img"),
+    //   pieceInitials = args["pieceInitials"],
+    //   gridPosition = args["gridPosition"];
+    // elem.setAttribute("src", this.pieceImgSrc( pieceInitials ) );
+    // elem.setAttribute("height", View.TILE_HEIGHT);
+    // elem.setAttribute("width", View.TILE_HEIGHT);
+    // let element = document.getElementById( gridPosition );
+    // element.appendChild(elem)
+    
+    let  gridPosition = args["gridPosition"],
+      element = document.getElementById( gridPosition );
+  
+    element.innerHTML = '\&#9820' 
   };
   displayLayOut(args){
 
@@ -57,7 +67,9 @@ class View{
     this.displayAlerts(alert)
   };
   pieceImgSrc(pieceInitials){
-    return "img/chesspieces/wikipedia/" + pieceInitials + ".png"
+    return "./chesspieces/" + pieceInitials + ".png"
+   
+    // return  "<%= asset_path('#{pieceInitials}.png') %>"
   };
   pieceInitials(pieceObject){
     let firstInitial = Board.parseTeam( pieceObject ),
@@ -182,3 +194,5 @@ class View{
     pauseButton.addEventListener("click", gameController.pause.bind(gameController))
   }
 }
+
+export default View

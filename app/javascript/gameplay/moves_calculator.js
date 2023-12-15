@@ -1,3 +1,7 @@
+import MovementType from "./movement_type"
+import Board from "./board"
+import MoveObject from "./move_object"
+
 class MovesCalculator {
   constructor({  startPosition: startPosition, board: board, moveObjects: moveObjects, movementTypes: movementTypes, ignoreCastles: ignoreCastles//, countDefense: countDefense//, endPosition: endPosition
   }){
@@ -577,3 +581,5 @@ class MovesCalculator {
   }
 
 }
+
+export default MovesCalculator

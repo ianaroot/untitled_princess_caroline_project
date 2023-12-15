@@ -1,3 +1,5 @@
+import Board from "./board";
+
 class Bot {
   constructor(api, team){
     this.api = api;
@@ -514,3 +516,5 @@ class Bot {
 // documentation
 // bot should have a function called determineMove. it will take in a hash containing a board, and the this.api, and it
 // will return an array, with the alphaNumeric startPosition and endPosition
+
+export default Bot

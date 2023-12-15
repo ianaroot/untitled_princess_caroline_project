@@ -11,3 +11,5 @@ class MovementType {
     // this.captureNotation = captureNotation
   }
 }
+
+export default MovementType
