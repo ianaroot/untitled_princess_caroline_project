@@ -432,13 +432,13 @@ class Board {
     }
   }
 
-  static backRankFor(team){
-    let rankArray = {
-      black: 8,
-      white: 1
-    }
-    return rankArray[team]
-  }
+  // static backRankFor(team){
+  //   let rankArray = {
+  //     black: 8,
+  //     white: 1
+  //   }
+  //   return rankArray[team]
+  // }
 
   kingSideCastleViableFor(team, startPosition){
     if( this.pieceObject(startPosition + 3) !== team + Board.ROOK ){ return false }
