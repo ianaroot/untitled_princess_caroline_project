@@ -7,11 +7,8 @@ class Bot {
   }
 
   determineMove(args){
-    // this.api = args["api"];
     let board = args["board"],
         availableMoves = this.api.availableMovesDefault(),
-    // this.homeTeam = this.homeTeam;
-    // let
         gamePhase = this.calculateGamePhase({team: this.homeTeam, board: board}),
         weightMoves = this.gamePhasePriorities[gamePhase],
         weightedMoves = weightMoves({moves: availableMoves, board: board, team: this.homeTeam});
