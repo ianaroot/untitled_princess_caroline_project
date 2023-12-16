@@ -3,7 +3,7 @@ import Board from "./board";
 import MoveObject from "./move_object";
 
 class Rules {
-
+  
   static getMoveObject(startPosition, endPosition, board){
     // if(
     //   !Board.prototype.isPrototypeOf( board ) || typeof startPosition !== "number" ||  typeof endPosition !== "number"

@@ -43,8 +43,8 @@ class View{
 
     let element = document.getElementById( gridPosition );
     element.innerHTML = ""
-    element.classList.remove("B")
-    element.classList.remove("W")
+    element.classList.remove(Board.WHITE)
+    element.classList.remove(Board.BLACK)
   };
   displayPiece(args){
     // let elem = document.createElement("img"),
@@ -62,6 +62,8 @@ class View{
       pieceImage = this.unicodePieces[pieceInitials];
     element.innerHTML = pieceImage;
     element.classList.add(pieceInitials[0])
+    // TODO sort of magic string like...both above and below
+    element.style.color = "black"
 
   };
 
@@ -139,9 +141,9 @@ class View{
   //   }
   // }
   teamSet(list){
-    if( list.contains("B")){
+    if( list.contains(Board.BLACK)){
       return Board.BLACK;
-    }else if (list.contains("W")) {
+    }else if (list.contains(Board.WHITE)) {
       return Board.WHITE;
     }else {
       throw new Error("error in teamSet")
