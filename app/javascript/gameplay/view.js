@@ -168,8 +168,8 @@ class View{
     let blackCaptureDiv = document.getElementById("B-captures"),
       whiteCaptureDiv = document.getElementById("W-captures"),
       capturedPieces = board.capturedPieces;
-    blackCaptureDiv.innerHTML = "";
-    whiteCaptureDiv.innerHTML = "";
+    blackCaptureDiv.innerHTML = "<br><br><br>";
+    whiteCaptureDiv.innerHTML = "<br><br><br>";
     for (let i = 0; i < capturedPieces.length; i++){
       let pieceObject = capturedPieces[i],
         team = Board.parseTeam( pieceObject ),
