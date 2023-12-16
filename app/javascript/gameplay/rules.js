@@ -127,6 +127,7 @@ class Rules {
   }
 
   static pawnPromotionQuery(board){
+    // TODO doesn't allow non-queen pawn promotion
     for(let i = 0; i < 8; i++){
       if ( board._blackPawnAt(i) ){
         board._promotePawn(i)
@@ -143,7 +144,6 @@ class Rules {
   }
 
   static noLegalMoves(board){
-    // debugger
     let movingTeamString = board.allowedToMove,
       noLegalMoves = true;
     if(movingTeamString === Board.BLACK){

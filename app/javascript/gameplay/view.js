@@ -98,7 +98,6 @@ class View{
     return firstInitial + secondInitial
   };
   highlightTile(){
-    console.log("clicky")
     if(!this._gameController.board.gameOver){
       let target = arguments[0].currentTarget,
       // img = target.children[0],
@@ -106,8 +105,7 @@ class View{
       team = Board.EMPTY;
       this.unhighlLighTiles();
       this.setTileClickListener();
-      console.log(target.classList)
-      if (target.classList.contains("B") || target.classList.contains("W") ) {
+      if (target.classList.contains(Board.BLACK) || target.classList.contains(Board.WHITE) ) {
         // team = this.teamSet(img.src)
         team = this.teamSet(target.classList)
         if (team === this._gameController.board.allowedToMove){
@@ -116,7 +114,6 @@ class View{
             let tilePosition = viables[i],
             alphaNumericPosition = Board.gridCalculator(tilePosition),
             square = document.getElementById(alphaNumericPosition);
-            console.log("this the square yo: " + square)
             square.classList.add("highlight2")
             square.removeEventListener("click", this.boundHighlightTile )
             square.addEventListener("click", this.boundAttemptMove )
