@@ -2,14 +2,28 @@ import Board from "./board";
 class Layout{
   static default(){
     let layOut = [
-      Board.WHITE + Board.ROOK, Board.WHITE + Board.NIGHT, Board.WHITE + Board.BISHOP, Board.WHITE + Board.QUEEN, Board.WHITE + Board.KING, Board.WHITE + Board.BISHOP, Board.WHITE + Board.NIGHT, Board.WHITE + Board.ROOK,
-      Board.WHITE + Board.PAWN, Board.WHITE + Board.PAWN, Board.WHITE + Board.PAWN, Board.WHITE + Board.PAWN, Board.WHITE + Board.PAWN, Board.WHITE + Board.PAWN, Board.WHITE + Board.PAWN, Board.WHITE + Board.PAWN,
-      Board.EMPTY + Board.EMPTY, Board.EMPTY + Board.EMPTY, Board.EMPTY + Board.EMPTY, Board.EMPTY + Board.EMPTY, Board.EMPTY + Board.EMPTY, Board.EMPTY + Board.EMPTY, Board.EMPTY + Board.EMPTY, Board.EMPTY + Board.EMPTY,
-      Board.EMPTY + Board.EMPTY, Board.EMPTY + Board.EMPTY, Board.EMPTY + Board.EMPTY, Board.EMPTY + Board.EMPTY, Board.EMPTY + Board.EMPTY, Board.EMPTY + Board.EMPTY, Board.EMPTY + Board.EMPTY, Board.EMPTY + Board.EMPTY,
-      Board.EMPTY + Board.EMPTY, Board.EMPTY + Board.EMPTY, Board.EMPTY + Board.EMPTY, Board.EMPTY + Board.EMPTY, Board.EMPTY + Board.EMPTY, Board.EMPTY + Board.EMPTY, Board.EMPTY + Board.EMPTY, Board.EMPTY + Board.EMPTY,
-      Board.EMPTY + Board.EMPTY, Board.EMPTY + Board.EMPTY, Board.EMPTY + Board.EMPTY, Board.EMPTY + Board.EMPTY, Board.EMPTY + Board.EMPTY, Board.EMPTY + Board.EMPTY, Board.EMPTY + Board.EMPTY, Board.EMPTY + Board.EMPTY,
-      Board.BLACK + Board.PAWN, Board.BLACK + Board.PAWN, Board.BLACK + Board.PAWN, Board.BLACK + Board.PAWN, Board.BLACK + Board.PAWN, Board.BLACK + Board.PAWN, Board.BLACK + Board.PAWN, Board.BLACK + Board.PAWN,
-      Board.BLACK + Board.ROOK, Board.BLACK + Board.NIGHT, Board.BLACK + Board.BISHOP, Board.BLACK + Board.QUEEN, Board.BLACK + Board.KING, Board.BLACK + Board.BISHOP, Board.BLACK + Board.NIGHT, Board.BLACK + Board.ROOK
+      Board.WHITE_ROOK,   Board.WHITE_NIGHT,  Board.WHITE_BISHOP, Board.WHITE_QUEEN,  Board.WHITE_KING,   Board.WHITE_BISHOP, Board.WHITE_NIGHT,  Board.WHITE_ROOK,
+      Board.WHITE_PAWN,   Board.WHITE_PAWN,   Board.WHITE_PAWN,   Board.WHITE_PAWN,   Board.WHITE_PAWN,   Board.WHITE_PAWN,   Board.WHITE_PAWN,   Board.WHITE_PAWN,
+      Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE,
+      Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE,
+      Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE,
+      Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE,
+      Board.BLACK_PAWN,   Board.BLACK_PAWN,   Board.BLACK_PAWN,   Board.BLACK_PAWN,   Board.BLACK_PAWN,   Board.BLACK_PAWN,   Board.BLACK_PAWN,   Board.BLACK_PAWN,
+      Board.BLACK_ROOK,   Board.BLACK_NIGHT,  Board.BLACK_BISHOP, Board.BLACK_QUEEN,  Board.BLACK_KING,   Board.BLACK_BISHOP, Board.BLACK_NIGHT,  Board.BLACK_ROOK
+    ];
+    return layOut
+  }
+
+  static weightTesting(){
+    let layOut = [
+      Board.WHITE_ROOK,   Board.WHITE_NIGHT,  Board.WHITE_BISHOP, Board.WHITE_QUEEN,  Board.WHITE_KING,   Board.WHITE_BISHOP, Board.WHITE_NIGHT,  Board.WHITE_ROOK,
+      Board.WHITE_PAWN,   Board.WHITE_PAWN,   Board.WHITE_PAWN,   Board.WHITE_PAWN,   Board.WHITE_PAWN,   Board.WHITE_PAWN,   Board.WHITE_PAWN,   Board.WHITE_PAWN,
+      Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE,
+      Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE,
+      Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE,
+      Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE,   Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE,
+      Board.BLACK_PAWN,   Board.BLACK_PAWN,   Board.BLACK_PAWN,   Board.BLACK_PAWN,   Board.BLACK_PAWN, Board.BLACK_PAWN,   Board.BLACK_PAWN,   Board.BLACK_PAWN,
+      Board.BLACK_ROOK,   Board.BLACK_NIGHT,  Board.BLACK_BISHOP, Board.BLACK_QUEEN,  Board.BLACK_KING,   Board.BLACK_BISHOP, Board.BLACK_NIGHT,  Board.BLACK_ROOK
     ];
     return layOut
   }
@@ -28,14 +42,14 @@ class Layout{
 
   static approachingMate(){
     let layOut = [
-      Board.WHITE + Board.ROOK,  Board.EMPTY + Board.EMPTY, Board.WHITE + Board.BISHOP,  Board.WHITE + Board.QUEEN, Board.WHITE + Board.KING,  Board.EMPTY + Board.EMPTY,   Board.WHITE + Board.NIGHT, Board.WHITE + Board.ROOK,
-      Board.WHITE + Board.PAWN,  Board.WHITE + Board.PAWN,  Board.WHITE + Board.PAWN,    Board.WHITE + Board.PAWN,  Board.EMPTY + Board.EMPTY, Board.WHITE + Board.PAWN,    Board.WHITE + Board.PAWN,  Board.WHITE + Board.PAWN,
-      Board.EMPTY + Board.EMPTY, Board.EMPTY + Board.EMPTY, Board.WHITE + Board.NIGHT,   Board.EMPTY + Board.EMPTY, Board.WHITE + Board.PAWN,  Board.EMPTY + Board.EMPTY,   Board.EMPTY + Board.EMPTY, Board.EMPTY + Board.EMPTY,
-      Board.EMPTY + Board.EMPTY, Board.EMPTY + Board.EMPTY, Board.WHITE + Board.BISHOP,  Board.EMPTY + Board.EMPTY, Board.EMPTY + Board.EMPTY, Board.EMPTY + Board.EMPTY,   Board.EMPTY + Board.EMPTY, Board.EMPTY + Board.EMPTY,
-      Board.EMPTY + Board.EMPTY, Board.EMPTY + Board.EMPTY, Board.EMPTY + Board.EMPTY,   Board.EMPTY + Board.EMPTY, Board.BLACK + Board.PAWN,  Board.EMPTY + Board.EMPTY,   Board.EMPTY + Board.EMPTY, Board.EMPTY + Board.EMPTY,
-      Board.BLACK + Board.NIGHT, Board.EMPTY + Board.EMPTY, Board.EMPTY + Board.EMPTY,   Board.BLACK + Board.PAWN,  Board.EMPTY + Board.EMPTY, Board.EMPTY + Board.EMPTY,   Board.EMPTY + Board.EMPTY, Board.EMPTY + Board.EMPTY,
-      Board.BLACK + Board.PAWN,  Board.BLACK + Board.PAWN,  Board.BLACK + Board.PAWN,    Board.EMPTY + Board.EMPTY, Board.EMPTY + Board.EMPTY,Board.BLACK + Board.PAWN,   Board.BLACK + Board.PAWN,  Board.BLACK + Board.PAWN,
-      Board.BLACK + Board.ROOK,  Board.EMPTY + Board.EMPTY, Board.BLACK + Board.BISHOP,  Board.BLACK + Board.QUEEN, Board.BLACK + Board.KING,  Board.BLACK + Board.BISHOP,  Board.BLACK + Board.NIGHT, Board.BLACK + Board.ROOK
+      Board.WHITE_ROOK,  Board.EMPTY_SQUARE, Board.WHITE_BISHOP,  Board.WHITE_QUEEN, Board.WHITE_KING,  Board.EMPTY_SQUARE,   Board.WHITE_NIGHT, Board.WHITE_ROOK,
+      Board.WHITE_PAWN,  Board.WHITE_PAWN,  Board.WHITE_PAWN,    Board.WHITE_PAWN,  Board.EMPTY_SQUARE, Board.WHITE_PAWN,    Board.WHITE_PAWN,  Board.WHITE_PAWN,
+      Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.WHITE_NIGHT,   Board.EMPTY_SQUARE, Board.WHITE_PAWN,  Board.EMPTY_SQUARE,   Board.EMPTY_SQUARE, Board.EMPTY_SQUARE,
+      Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.WHITE_BISHOP,  Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE,   Board.EMPTY_SQUARE, Board.EMPTY_SQUARE,
+      Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE,   Board.EMPTY_SQUARE, Board.BLACK_PAWN,  Board.EMPTY_SQUARE,   Board.EMPTY_SQUARE, Board.EMPTY_SQUARE,
+      Board.BLACK_NIGHT, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE,   Board.BLACK_PAWN,  Board.EMPTY_SQUARE, Board.EMPTY_SQUARE,   Board.EMPTY_SQUARE, Board.EMPTY_SQUARE,
+      Board.BLACK_PAWN,  Board.BLACK_PAWN,  Board.BLACK_PAWN,    Board.EMPTY_SQUARE, Board.EMPTY_SQUARE,Board.BLACK_PAWN,   Board.BLACK_PAWN,  Board.BLACK_PAWN,
+      Board.BLACK_ROOK,  Board.EMPTY_SQUARE, Board.BLACK_BISHOP,  Board.BLACK_QUEEN, Board.BLACK_KING,  Board.BLACK_BISHOP,  Board.BLACK_NIGHT, Board.BLACK_ROOK
     ];//approachingMate used for training bot to seek mate
 
     return layOut
