@@ -7,11 +7,8 @@ class Bot {
   }
 
   determineMove(args){
-    // this.api = args["api"];
     let board = args["board"],
         availableMoves = this.api.availableMovesDefault(),
-    // this.homeTeam = this.homeTeam;
-    // let
         gamePhase = this.calculateGamePhase({team: this.homeTeam, board: board}),
         weightMoves = this.gamePhasePriorities[gamePhase],
         weightedMoves = weightMoves({moves: availableMoves, board: board, team: this.homeTeam});
@@ -19,7 +16,7 @@ class Bot {
         console.log("weightedMoves")
         console.log(weightedMoves)
 
-    let moveIdeas = this.pickNweightiestMovesFrom(weightedMoves, 3)
+    let moveIdeas = this.pickNweightiestMovesFrom(weightedMoves, 8)
     let move = moveIdeas[Math.floor(Math.random()*moveIdeas.length)];
     console.log(this.homeTeam)
     console.log(move)

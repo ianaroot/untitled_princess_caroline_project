@@ -43,8 +43,8 @@ class View{
 
     let element = document.getElementById( gridPosition );
     element.innerHTML = ""
-    element.classList.remove("B")
-    element.classList.remove("W")
+    element.classList.remove(Board.WHITE)
+    element.classList.remove(Board.BLACK)
   };
   displayPiece(args){
     // let elem = document.createElement("img"),
@@ -62,6 +62,8 @@ class View{
       pieceImage = this.unicodePieces[pieceInitials];
     element.innerHTML = pieceImage;
     element.classList.add(pieceInitials[0])
+    // TODO sort of magic string like...both above and below
+    element.style.color = "black"
 
   };
 
@@ -98,7 +100,6 @@ class View{
     return firstInitial + secondInitial
   };
   highlightTile(){
-    console.log("clicky")
     if(!this._gameController.board.gameOver){
       let target = arguments[0].currentTarget,
       // img = target.children[0],
@@ -106,8 +107,7 @@ class View{
       team = Board.EMPTY;
       this.unhighlLighTiles();
       this.setTileClickListener();
-      console.log(target.classList)
-      if (target.classList.contains("B") || target.classList.contains("W") ) {
+      if (target.classList.contains(Board.BLACK) || target.classList.contains(Board.WHITE) ) {
         // team = this.teamSet(img.src)
         team = this.teamSet(target.classList)
         if (team === this._gameController.board.allowedToMove){
@@ -116,7 +116,6 @@ class View{
             let tilePosition = viables[i],
             alphaNumericPosition = Board.gridCalculator(tilePosition),
             square = document.getElementById(alphaNumericPosition);
-            console.log("this the square yo: " + square)
             square.classList.add("highlight2")
             square.removeEventListener("click", this.boundHighlightTile )
             square.addEventListener("click", this.boundAttemptMove )
@@ -142,9 +141,9 @@ class View{
   //   }
   // }
   teamSet(list){
-    if( list.contains("B")){
+    if( list.contains(Board.BLACK)){
       return Board.BLACK;
-    }else if (list.contains("W")) {
+    }else if (list.contains(Board.WHITE)) {
       return Board.WHITE;
     }else {
       throw new Error("error in teamSet")
@@ -169,8 +168,8 @@ class View{
     let blackCaptureDiv = document.getElementById("B-captures"),
       whiteCaptureDiv = document.getElementById("W-captures"),
       capturedPieces = board.capturedPieces;
-    blackCaptureDiv.innerHTML = "";
-    whiteCaptureDiv.innerHTML = "";
+    blackCaptureDiv.innerHTML = "<br><br><br>";
+    whiteCaptureDiv.innerHTML = "<br><br><br>";
     for (let i = 0; i < capturedPieces.length; i++){
       let pieceObject = capturedPieces[i],
         team = Board.parseTeam( pieceObject ),

@@ -16,12 +16,30 @@ class Board {
   static get WHITE()  { return "W" }
   static get BLACK()  { return "B" }
   static get EMPTY()  { return "e" }
+
   static get PAWN()   { return "P" }
   static get ROOK()   { return "R" }
   static get NIGHT()  { return "N" }
   static get BISHOP() { return "B" }
   static get QUEEN()  { return "Q" }
   static get KING()   { return "K" }
+
+  static get EMPTY_SQUARE() { return this.EMPTY + this.EMPTY }
+
+  static get BLACK_PAWN() { return this.BLACK + this.PAWN }
+  static get BLACK_ROOK() { return this.BLACK + this.ROOK }
+  static get BLACK_NIGHT() { return this.BLACK + this.NIGHT }
+  static get BLACK_BISHOP() { return this.BLACK + this.BISHOP }
+  static get BLACK_KING() { return this.BLACK + this.KING }
+  static get BLACK_QUEEN() { return this.BLACK + this.QUEEN }
+
+  static get WHITE_PAWN() { return this.WHITE + this.PAWN }
+  static get WHITE_ROOK() { return this.WHITE + this.ROOK }
+  static get WHITE_NIGHT() { return this.WHITE + this.NIGHT }
+  static get WHITE_BISHOP() { return this.WHITE + this.BISHOP }
+  static get WHITE_KING() { return this.WHITE + this.KING }
+  static get WHITE_QUEEN() { return this.WHITE + this.QUEEN }
+
   static get DARK()   { return "dark" }
   static get LIGHT()  { return "light" }
   static get MINOR_PIECES() { return [Board.NIGHT, Board.BISHOP] }
@@ -432,13 +450,13 @@ class Board {
     }
   }
 
-  static backRankFor(team){
-    let rankArray = {
-      black: 8,
-      white: 1
-    }
-    return rankArray[team]
-  }
+  // static backRankFor(team){
+  //   let rankArray = {
+  //     black: 8,
+  //     white: 1
+  //   }
+  //   return rankArray[team]
+  // }
 
   kingSideCastleViableFor(team, startPosition){
     if( this.pieceObject(startPosition + 3) !== team + Board.ROOK ){ return false }
