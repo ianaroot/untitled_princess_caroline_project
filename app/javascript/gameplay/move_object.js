@@ -1,4 +1,4 @@
-import Board from "./board"
+import Board from "gameplay/board"
 
 class MoveObject {
   constructor({endPosition: endPosition,

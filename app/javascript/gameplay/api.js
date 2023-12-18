@@ -1,4 +1,4 @@
-import Rules from "./rules"
+import Rules from "gameplay/rules"
 
 class Api {
   constructor (args){

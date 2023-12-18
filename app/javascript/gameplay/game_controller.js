@@ -1,8 +1,8 @@
-import Board from "./board"
-import View	from "./view"
-import Api	from "./api"
-import Bot	from "./bot"
-import Rules from "./rules"
+import Board from "gameplay/board"
+import View	from "gameplay/view"
+import Api	from "gameplay/api"
+import Bot	from "gameplay/bot"
+import Rules from "gameplay/rules"
 
 const throwIfMissing = p => { throw new Error(`Missing parameter: ${p}`) }
 

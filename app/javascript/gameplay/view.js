@@ -1,5 +1,5 @@
-import Board from "./board"
-import Rules from "./rules"
+import Board from "gameplay/board"
+import Rules from "gameplay/rules"
 
 class View{
   constructor(_gameController){
@@ -100,6 +100,7 @@ class View{
     return firstInitial + secondInitial
   };
   highlightTile(){
+    console.log("clicky")
     if(!this._gameController.board.gameOver){
       let target = arguments[0].currentTarget,
       // img = target.children[0],
@@ -132,9 +133,9 @@ class View{
   // teamSet(src){
   //     let regex = /(\w)[A-Z]\.png$/,
   //     teamInitial = src.match(regex)[1];
-  //   if( teamInitial === "B"){
+  //   if( teamInitial === Board.BLACK){
   //     return Board.BLACK;
-  //   }else if (teamInitial === "W") {
+  //   }else if (teamInitial === Board.WHITE) {
   //     return Board.WHITE;
   //   }else {
   //     throw new Error("error in teamSet")
