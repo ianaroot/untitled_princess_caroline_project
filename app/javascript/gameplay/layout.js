@@ -29,14 +29,14 @@ class Layout{
   }
 
   static approachingStale(){
-    let layOut = ["ee", "ee", "ee", "ee", "WK", "ee", "ee", "ee",
-                  "ee", "ee", "ee", "WP", "WN", "WP", "WP", "ee",
-                  "ee", "ee", "ee", "ee", "ee", "ee", "ee", "WR",
-                  "WP", "WB", "ee", "ee", "ee", "ee", "ee", "ee",
-                  "ee", "ee", "ee", "ee", "WQ", "ee", "ee", "ee",
-                  "ee", "ee", "ee", "ee", "BP", "ee", "ee", "ee",
-                  "ee", "ee", "ee", "ee", "ee", "BK", "ee", "ee",
-                  "ee", "ee", "ee", "ee", "ee", "ee", "ee", "WR"]
+    let layOut = [Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.WHITE_KING,   Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE,
+                  Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.WHITE_PAWN,   Board.WHITE_NIGHT,  Board.WHITE_PAWN,   Board.WHITE_PAWN,   Board.EMPTY_SQUARE,
+                  Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.WHITE_ROOK,
+                  Board.WHITE_PAWN,   Board.WHITE_BISHOP, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE,
+                  Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.WHITE_QUEEN,  Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE,
+                  Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.BLACK_PAWN,   Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE,
+                  Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.BLACK_KING,   Board.EMPTY_SQUARE, Board.EMPTY_SQUARE,
+                  Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.EMPTY_SQUARE, Board.WHITE_ROOK]
     return layOut
   }
 

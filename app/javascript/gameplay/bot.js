@@ -16,7 +16,7 @@ class Bot {
         console.log("weightedMoves")
         console.log(weightedMoves)
 
-    let moveIdeas = this.pickNweightiestMovesFrom(weightedMoves, 3)
+    let moveIdeas = this.pickNweightiestMovesFrom(weightedMoves, 8)
     let move = moveIdeas[Math.floor(Math.random()*moveIdeas.length)];
     console.log(this.homeTeam)
     console.log(move)
