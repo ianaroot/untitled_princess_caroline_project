@@ -8,9 +8,9 @@
   },
   "scripts": {
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets",
-    "heroku-prebuild": "yarn add @hotwired/turbo-rails",
-    "heroku-prebuild": "yarn run build",
-    "heroku-prebuild": "yarn add stimulus"
+    "heroku-postbuild": "yarn add @hotwired/turbo-rails",
+    "heroku-postbuild": "yarn run build",
+    "heroku-postbuild": "yarn add stimulus"
   },
   "engines": {
     "node": "20.9",
