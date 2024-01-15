@@ -1,6 +1,6 @@
 // Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
 import "@hotwired/turbo-rails"
-import "controllers"
+import "./controllers/hello_controller.js"
 import Api from "./gameplay/api"
 import Board from "./gameplay/board"
 import Bot from "./gameplay/bot"
