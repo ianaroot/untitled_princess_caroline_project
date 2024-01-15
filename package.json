@@ -7,7 +7,10 @@
     "stimulus": "^3.2.2"
   },
   "scripts": {
-    "build": "esbuild app/javascript/*.* --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets"
+    "build": "esbuild app/javascript/*.* --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets",
+    "heroku-prebuild": "yarn add @hotwired/turbo-rails",
+    "heroku-prebuild": "yarn run build",
+    "heroku-prebuild": "yarn add stimulus"
   },
   "engines": {
     "node": "20.9",
