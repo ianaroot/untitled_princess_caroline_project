@@ -1,12 +1,12 @@
 databases:
-  - name: mysite
-    databaseName: mysite
-    user: mysite
+  - name: upcp
+    databaseName: upcp
+    user: ianaroot
     plan: free
 
 services:
   - type: web
-    name: mysite
+    name: upcp
     runtime: ruby
     plan: free
     buildCommand: "./bin/render-build.sh"
