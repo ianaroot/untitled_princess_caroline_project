@@ -1,5 +1,5 @@
-import Board from "./board"
-import Rules from "./rules"
+import Board from "gameplay/board"
+import Rules from "gameplay/rules"
 
 class View{
   constructor(_gameController){

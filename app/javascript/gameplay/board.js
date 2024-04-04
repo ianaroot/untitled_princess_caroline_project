@@ -1,5 +1,5 @@
-import Layout from "./layout";
-import Rules from "./rules";
+import Layout from "gameplay/layout";
+import Rules from "gameplay/rules";
 
 class Board {
   // TODO might be easier to store the moveObjects and recreate noatation on demand!!!
