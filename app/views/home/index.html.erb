@@ -1,5 +1,6 @@
 <% if user_signed_in? %> 
  <div> Welcome <%= current_user.email %> </div> 
+  <%= button_to "Play chess against a very dumb bot!", new_game_path, method: :get %> 
   <%= button_to "Sign out", destroy_user_session_path, method: :delete %> 
 <% else %>
   <%= button_to "Sign in", new_user_session_path %> 
