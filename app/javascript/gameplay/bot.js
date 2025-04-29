@@ -18,8 +18,9 @@ class Bot {
 
     let moveIdeas = this.pickNweightiestMovesFrom(weightedMoves, 8)
     let move = moveIdeas[Math.floor(Math.random()*moveIdeas.length)];
-    console.log(this.homeTeam)
-    console.log(move)
+    // console.log(this.homeTeam)
+    // console.log(move)
+    console.log(gamePhase)
     return move
 
   }
@@ -148,8 +149,8 @@ class Bot {
       }
     }
     let endTime = Math.floor(Date.now() / 1000)
-    console.log(weights)
-    console.log( endTime - startTime)
+    // console.log(weights)
+    // console.log( endTime - startTime)
   }
 
   // recursivelyProjectMoves({board: board, move: move, depth: depth, iteration: iteration}){
@@ -481,15 +482,6 @@ class Bot {
     return array.sort(sortNumber);
   }
 
-  // copyArray(array){
-  //   let newArray = []
-  //   for(let i = 0; i < array.length; i++){
-  //     newArray.push( array[i] )
-  //   };
-  //   return newArray
-  // }
-
-
   pickNweightiestMovesFrom(weightedMoves, n){
     let nWeights = [],
       weights = Object.keys(weightedMoves),
@@ -508,10 +500,5 @@ class Bot {
 
 
 }
-
-
-// documentation
-// bot should have a function called determineMove. it will take in a hash containing a board, and the this.api, and it
-// will return an array, with the alphaNumeric startPosition and endPosition
 
 export default Bot

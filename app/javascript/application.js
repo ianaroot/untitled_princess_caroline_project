@@ -11,5 +11,9 @@ import MovementType from "gameplay/movement_type"
 import MovesCalculator from "gameplay/moves_calculator"
 import Rules from "gameplay/rules"
 import View from "gameplay/view"
+impot Sound from "gameplay/sound"
 
-var gameController = new GameController()
+
+// window.addEventListener('load', function () {
+//     var gameController = new GameController()
+// })
